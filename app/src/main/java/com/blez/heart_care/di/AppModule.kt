@@ -4,6 +4,7 @@ import android.content.Context
 import com.blez.heart_care.data.api.HeartAPI
 import com.blez.heart_care.repository.HeartRepository
 import com.blez.heart_care.util.Constants.BASE_URL
+import com.blez.heart_care.util.CredentialManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +25,10 @@ object AppModule {
     @Singleton
     fun providesApplicationContext(@ApplicationContext context: Context) = context
 
+
+    @Provides
+    @Singleton
+    fun providesCredentialManager(context: Context) = CredentialManager(context)
 
     @Provides
     @Singleton

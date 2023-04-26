@@ -28,7 +28,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private lateinit var mainViewModel: MainViewModel
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSigninClient : GoogleSignInClient
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
         auth = FirebaseAuth.getInstance()
         if (!tokenManager.getUsername().isNullOrEmpty()) {
             val intent = Intent(this, HomeActivity::class.java)
@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity() {
                 tokenManager.saveToken(account.idToken.toString())
                 Log.e("TAG",tokenManager.getPic().toString())
                 alert.dismiss()
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this,HomeActivity::class.java)
                 startActivity(intent)
                 finish()
 
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun subscribeToUI() {
+   /* private fun subscribeToUI() {
         lifecycleScope.launch(Dispatchers.Main) {
             mainViewModel.heartStatus.collect { events ->
                 when (events) {
@@ -167,5 +167,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 }

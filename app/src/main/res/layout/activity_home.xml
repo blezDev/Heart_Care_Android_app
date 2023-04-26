@@ -48,13 +48,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-        <com.airbnb.lottie.LottieAnimationView
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="200dp"
             android:layout_height="200dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/heart"
+           android:src="@drawable/heart"
             tools:srcCompat="@drawable/heart" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -89,29 +89,34 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <TextView
-        android:id="@+id/suggestionText"
+    <ImageView
+        android:id="@+id/logoutImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Doctor Suggestion"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/work"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logout_24" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/doctorRecyclerview"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/doctorImg"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:layout_margin="5dp"
+        android:scaleType="fitCenter"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
+        app:srcCompat="@drawable/doc" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/suggestionText" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

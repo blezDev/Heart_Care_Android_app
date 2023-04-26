@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,13 +26,31 @@ class MainViewModel @Inject constructor(val repository: HeartRepository)  : View
     val heartStatus : StateFlow<SetupEvent>
     get() = _heartStatus
 
+    private var heartDataObject : String? = null
+
+    fun setHeartInput(heartData : HeartInput){
+
+        _heartStatus.value = SetupEvent.LoadingState
+        getPrediction(heartData)
+    }
+    fun getHeartResult() : String{
+        return heartDataObject ?: throw NullPointerException("Null Object")
+    }
+
+    fun setOnLoadingSetupEvent(){
+        _heartStatus.value = SetupEvent.LoadingState
+    }
 
     fun getPrediction(data : HeartInput) = viewModelScope.launch(Dispatchers.Main) {
+
         _heartStatus.value = SetupEvent.LoadingState
-        val result = repository.getPrediction(data)
+        val result = withContext(Dispatchers.Main){ repository.getPrediction(data) }
+
 
         if(result.isSuccessful){
+            heartDataObject = result.body()?.message
             _heartStatus.value = SetupEvent.HeartData(result.body()?: Status("Something went wrong!! Please Try Later"))
+
         }
         if (!result.isSuccessful){
             _heartStatus.value = SetupEvent.FailState

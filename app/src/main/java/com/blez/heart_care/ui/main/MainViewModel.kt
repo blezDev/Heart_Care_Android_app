@@ -51,6 +51,9 @@ class MainViewModel @Inject constructor(val repository: HeartRepository)  : View
             heartDataObject = result.body()?.message
             _heartStatus.value = SetupEvent.HeartData(result.body()?: Status("Something went wrong!! Please Try Later"))
 
+        }else
+        {
+            _heartStatus.value = SetupEvent.FailState
         }
         if (!result.isSuccessful){
             _heartStatus.value = SetupEvent.FailState

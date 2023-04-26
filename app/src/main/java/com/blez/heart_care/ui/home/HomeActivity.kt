@@ -6,6 +6,7 @@ import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
@@ -35,8 +36,6 @@ class HomeActivity : AppCompatActivity() {
         binding.nameText.text = "Hello, ${credentialManager.getUsername()}"
         binding.progressBar.isVisible = false
         binding.imageView.setOnClickListener {
-            binding.progressBar.isVisible = false
-
             QuestionFragment().show(supportFragmentManager, "TAG")
             subscribeToUI(this)
 
@@ -56,18 +55,27 @@ class HomeActivity : AppCompatActivity() {
                     is MainViewModel.SetupEvent.HeartData -> {
 
                         Log.e("TAG", events.output.message.toString())
-                        binding.progressBar.visibility = View.INVISIBLE
+                        binding.progressBar.isVisible = false
 
-                        ResultFragment().show(supportFragmentManager, "TAG")
+                        ResultFragment()
+                            .apply {
+                            show(supportFragmentManager, "TAG")
+                        }
+
+
                         mainViewModel.setOnLoadingSetupEvent()
                     }
 
                     is MainViewModel.SetupEvent.LoadingState -> {
-                        binding.progressBar.isVisible = true
+                        Toast.makeText(this@HomeActivity, "Loading! Please wait", Toast.LENGTH_SHORT).show()
 
                     }
 
-                    else -> Unit
+                    MainViewModel.SetupEvent.FailState -> {
+
+                        binding.progressBar.visibility =View.INVISIBLE
+                    }
+                    MainViewModel.SetupEvent.NoEventState -> Unit
                 }
             }
         }

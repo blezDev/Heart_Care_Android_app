@@ -33,6 +33,8 @@ private lateinit var binding : FragmentResultBinding
         super.onViewCreated(view, savedInstanceState)
         mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         val result = mainViewModel.getHeartResult()
+
+
         if (result == "no"){
             binding.resultText.text = "No worries. You’re doing great! If you want, you can schedule an appointment with a doctor."
         }else{

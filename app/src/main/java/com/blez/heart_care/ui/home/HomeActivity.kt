@@ -67,8 +67,6 @@ class HomeActivity : AppCompatActivity() {
                     }
 
                     is MainViewModel.SetupEvent.LoadingState -> {
-                        Toast.makeText(this@HomeActivity, "Loading! Please wait", Toast.LENGTH_SHORT).show()
-
                     }
 
                     MainViewModel.SetupEvent.FailState -> {

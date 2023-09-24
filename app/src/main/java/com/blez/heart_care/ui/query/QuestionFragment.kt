@@ -74,7 +74,7 @@ class QuestionFragment : BottomSheetDialogFragment() {
         }
 
         binding.saveBTNDummy.setOnClickListener {
-            val Sample_data = HeartInput(
+       /*     val Sample_data = HeartInput(
                 age = "20",
                 chest_pain_type = "0",
                 cholesterol = "212",
@@ -88,6 +88,22 @@ class QuestionFragment : BottomSheetDialogFragment() {
                 st_depression = "1.0",
                 st_slope = "2",
                 thalassemia = "3"
+
+            )*/
+            val Sample_data = HeartInput(
+                age = "58",
+                chest_pain_type = "2",
+                cholesterol = "211",
+                exercise_induced_angina = "0",
+                fasting_blood_sugar = "1",
+                max_heart_rate_achieved = "165",
+                num_major_vessels = "2",
+                rest_ecg = "0",
+                resting_blood_pressure = "140",
+                sex = "1",
+                st_depression = "0.0",
+                st_slope = "2",
+                thalassemia = "2"
 
             )
             mainViewModel.setHeartInput(Sample_data)

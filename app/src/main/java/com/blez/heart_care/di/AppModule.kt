@@ -4,6 +4,7 @@ import android.content.Context
 import com.blez.heart_care.data.api.HeartAPI
 import com.blez.heart_care.repository.HeartRepository
 import com.blez.heart_care.util.Constants.BASE_URL
+import com.blez.heart_care.util.Constants.BASE_URL_LOCAL
 import com.blez.heart_care.util.CredentialManager
 import dagger.Module
 import dagger.Provides

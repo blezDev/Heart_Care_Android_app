@@ -34,7 +34,7 @@
             android:id="@+id/age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +85,7 @@
             android:id="@+id/cholesterol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +110,7 @@
             android:id="@+id/e_induced_angina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -135,7 +135,7 @@
             android:id="@+id/blood_sugar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -161,7 +161,7 @@
             android:id="@+id/heart_rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -186,7 +186,7 @@
             android:id="@+id/major_vessel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -211,7 +211,7 @@
             android:id="@+id/rest_ecg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -237,7 +237,7 @@
             android:id="@+id/resting_blood_pressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -288,7 +288,7 @@
             android:id="@+id/st_depression"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:minHeight="45dp"
             android:textColor="#090808" />
 
@@ -314,7 +314,7 @@
             android:id="@+id/st_slope"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -339,7 +339,7 @@
             android:id="@+id/thalassemia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#090808" />
 
 

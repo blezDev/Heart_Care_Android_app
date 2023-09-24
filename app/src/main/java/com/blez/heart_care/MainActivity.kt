@@ -2,17 +2,17 @@ package com.blez.heart_care
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.blez.heart_care.data.model.HeartInput
 import com.blez.heart_care.databinding.ActivityMainBinding
 import com.blez.heart_care.ui.home.HomeActivity
-import com.blez.heart_care.ui.main.MainViewModel
 import com.blez.heart_care.util.CredentialManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -22,21 +22,22 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import java.util.Locale
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
-    private lateinit var googleSigninClient : GoogleSignInClient
+/*    private lateinit var googleSigninClient : GoogleSignInClient*/
     private lateinit var alert: androidx.appcompat.app.AlertDialog
 
     @Inject
     lateinit var tokenManager: CredentialManager
 
+/*
 
 
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
@@ -53,12 +54,51 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+*/
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.getStartedBTN.setOnClickListener {
+            CredentialManager(this).saveUsername("USER")
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
+        }
+/*        val locale = resources.configuration.locale
+        val countryCode = locale.country
+
+        var colorsResource: String? = null
+        colorsResource = if (countryCode == "US") {
+            "colors-us"
+        } else if (countryCode == "IN") {
+            "colors-in"
+        } else {
+            "colors"
+        }
+        val color = resources.getColor("$colorsResource:colorPrimary")*/
+
+
+//        val appLocale: LocaleListCompat = LocaleListCompat.getDefault()
+//        AppCompatDelegate.setApplicationLocales(appLocale)
+
+
+        }
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
 
         auth = FirebaseAuth.getInstance()
         if (!tokenManager.getUsername().isNullOrEmpty()) {
@@ -148,7 +188,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    }
+    }*/
 
    /* private fun subscribeToUI() {
         lifecycleScope.launch(Dispatchers.Main) {

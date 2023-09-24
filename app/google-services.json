@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "502835366393",
-    "project_id": "heart-care-18697",
-    "storage_bucket": "heart-care-18697.appspot.com"
+    "project_number": "277764955988",
+    "project_id": "heartcare-6dc4b",
+    "storage_bucket": "heartcare-6dc4b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:502835366393:android:2a47515311f914699c1528",
+        "mobilesdk_app_id": "1:277764955988:android:5c5fb4727064ffa8b6b2c1",
         "android_client_info": {
           "package_name": "com.blez.heart_care"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "502835366393-6b2meoq7g1ue9et97libpv0eb8jcsboi.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC9o79Dq9YJHQPH6NFAOMpIeZ4e-m5jVYc"
+          "current_key": "AIzaSyD0DZMRRFxob8MXXj1nf9h4WjmUHc5qAWo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "502835366393-6b2meoq7g1ue9et97libpv0eb8jcsboi.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

@@ -34,9 +34,13 @@ class MainViewModel @Inject constructor(val repository: HeartRepository)  : View
         getPrediction(heartData)
     }
     fun getHeartResult() : String{
-        return heartDataObject ?: throw NullPointerException("Null Object")
+        return heartDataObject ?: "no"
     }
 
+    fun setHeartResult(result : String){
+        heartDataObject = result
+
+    }
     fun setOnLoadingSetupEvent(){
         _heartStatus.value = SetupEvent.LoadingState
     }

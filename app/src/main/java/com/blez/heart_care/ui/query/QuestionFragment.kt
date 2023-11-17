@@ -106,7 +106,23 @@ class QuestionFragment : BottomSheetDialogFragment() {
                 thalassemia = "2"
 
             )
-            mainViewModel.setHeartInput(Sample_data)
+            val data = HeartInput(
+                age = "20",
+                chest_pain_type = "0",
+                cholesterol = "212",
+                exercise_induced_angina = "0",
+                fasting_blood_sugar = "0",
+                max_heart_rate_achieved = "168",
+                num_major_vessels = "2",
+                rest_ecg = "1",
+                resting_blood_pressure = "125",
+                sex = "1",
+                st_depression = "1.0",
+                st_slope = "2",
+                thalassemia = "3"
+
+            )
+            mainViewModel.setHeartInput(data)
             dismissNow()
 
         }

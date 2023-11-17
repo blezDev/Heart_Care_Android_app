@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/half_green"
-    tools:context=".ui.result.ResultFragment">
-
+    tools:context=".ui.result.ResultActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
